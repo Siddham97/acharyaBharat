@@ -103,6 +103,7 @@ const Appbar = (props) => {
               >
                 <MenuIcon />
               </IconButton>
+              <Logo />
             </Hidden>
             <Hidden smUp>
               <IconButton
