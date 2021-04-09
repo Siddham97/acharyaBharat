@@ -34,6 +34,7 @@ import tileimage4 from "../../assets/images/blog/img-4.jpg";
 import tileimage5 from "../../assets/images/blog/img-5.jpg";
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import { FooterContainer } from "../footer/footer";
+import Player from "../../components/player";
 
 const useStyles = makeStyles((theme) => ({
   heroText: {
@@ -253,10 +254,10 @@ function Dashboard({ darkTheme }) {
             Acharya Bharat
           </Typography>
           <Typography variant="subtitle1" gutterBottom>
-            Learn How To Build Websites & Apps Write A Code Or Start A Business
+            We Are Eager To Give You Best Education Service Online
           </Typography>
           <Button variant="contained" color="primary" onClick={handleClick}>
-            make a tour
+            Contact Us
           </Button>
           <AutoRotatingCarouselModal
             isMobile={matchSM}
@@ -427,7 +428,7 @@ function Dashboard({ darkTheme }) {
       </Box>
 
       <Box my={5} display="flex" alignContent="center" justifyContent="center">
-        <Box width="100vh">
+        {/* <Box width="100vh">
           <GridList cellHeight={160} className={classes.gridList} cols={3}>
             {tileData.map((tile) => (
               <GridListTile key={tile.img} cols={tile.cols || 1}>
@@ -435,7 +436,11 @@ function Dashboard({ darkTheme }) {
               </GridListTile>
             ))}
           </GridList>
-        </Box>
+        </Box> */}
+        <Player>
+          <Player.Button />
+          <Player.Video src={"/videos/bunny.mp4"} />
+        </Player>
       </Box>
 
       <Box className={classes.intro}>
