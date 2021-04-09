@@ -439,7 +439,7 @@ function Dashboard({ darkTheme }) {
         </Box> */}
         <Player>
           <Player.Button />
-          <Player.Video src={"/videos/bunny.mp4"} />
+          <Player.Video src="/videos/bunny.mp4" />
         </Player>
       </Box>
 

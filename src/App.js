@@ -15,6 +15,7 @@ import UsersManager from "./containers/UsersManager/UsersManager";
 import CoursesManager from "./containers/CoursesManager/CoursesManager";
 import PageNotFound from "./containers/PageNotFound/PageNotFound";
 import About from "./containers/Auth/About/About";
+import ContactUs from "./containers/ContactUs/ContactUs";
 
 const RouteUser = ({ Component, ...props }) => {
   return (
@@ -60,6 +61,7 @@ const App = ({ onTryAutoSignup }) => {
         {/* With Layout */}
         <RouteUser path="/" exact Component={Dashboard} />
         <RouteUser path="/about" exact Component={About} />
+        <RouteUser path="/contact-us" exact Component={ContactUs} />
         <RouteUser path="/courses" exact Component={Courses} />
         <RouteUser path="/my-courses" exact Component={MyCourses} />
         <RouteUser path="/courses/:id" Component={CourseDetail} />

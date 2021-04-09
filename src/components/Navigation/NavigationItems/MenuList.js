@@ -16,12 +16,13 @@ import {
   Home,
   People,
   ViewList,
-  InsertDriveFile,
+  InsertDriveFile
 } from "@material-ui/icons";
 
 import GmailSidebarItem from "@mui-treasury/components/sidebarItem/gmail";
 
 import Logo from "../Logo/Logo";
+import ContactsIcon from '@material-ui/icons/Contacts';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -160,6 +161,25 @@ const MenuList = (props) => {
     );
   });
 
+  const ContactUs = React.forwardRef(function MyComponent(props, ref) {
+    //  Spread the props to the underlying DOM element.
+    return (
+      <div {...props} ref={ref}>
+        <Link to="/contact-us" className={classes.navlink}>
+          <GmailSidebarItem
+            classes={{ collapsed: classes.collapsed, root: classes.root }}
+            color={""}
+            startIcon={<ContactsIcon className={classes.navIcon} />}
+            label={"Contact Us"}
+            amount={""}
+            {...commonProps("/contact-us")}
+            dotOnCollapsed={true}
+          />
+        </Link>
+      </div>
+    );
+  });
+
   return (
     <Box
       className={classes.list}
@@ -203,6 +223,10 @@ const MenuList = (props) => {
 
         <Tooltip title="About">
           <About />
+        </Tooltip>
+
+        <Tooltip title="Contact Us">
+          <ContactUs />
         </Tooltip>
       </List>
     </Box>
