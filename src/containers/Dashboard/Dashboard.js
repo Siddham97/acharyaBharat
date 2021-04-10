@@ -35,6 +35,9 @@ import tileimage5 from "../../assets/images/blog/img-5.jpg";
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import { FooterContainer } from "../footer/footer";
 import Player from "../../components/player";
+import Card from "../../components/card";
+import tutor from "../../assets/images/tutor.jpg";
+import video from "../../assets/videos/video.mp4";
 
 const useStyles = makeStyles((theme) => ({
   heroText: {
@@ -98,12 +101,12 @@ const useStyles = makeStyles((theme) => ({
 const slideItems = [
   {
     media: course1,
-    title: "This is a very cool feature",
-    subtitle: "Just using this will blow your mind.",
+    title: "Bharat Dwivedi",
+    subtitle: "Watch the awesome demo video from our team members!",
   },
   {
     media: course2,
-    title: "Ever wanted to be popular?",
+    title: "Siddham Sharma",
     subtitle: "Well just mix two colors and your are good to go!",
   },
   {
@@ -437,10 +440,28 @@ function Dashboard({ darkTheme }) {
             ))}
           </GridList>
         </Box> */}
-        <Player>
-          <Player.Button />
-          <Player.Video src="/videos/bunny.mp4" />
-        </Player>
+        <Card.Group>
+          <Card>
+            <Card.Title>Card</Card.Title>
+            <Card.Entities>
+              {slideItems.map((item) => (
+                <Card.Item key={item.media} item={item}>
+                  <Card.Image src={item.media} />
+                  <Card.Meta>
+                    <Card.SubTitle>{item.title}</Card.SubTitle>
+                    <Card.Text>{item.subtitle}</Card.Text>
+                  </Card.Meta>
+                </Card.Item>
+              ))}
+            </Card.Entities>
+            <Card.Feature src={tutor}>
+              <Player>
+                <Player.Button />
+                <Player.Video src={video} />
+              </Player>
+            </Card.Feature>
+          </Card>
+      </Card.Group>
       </Box>
 
       <Box className={classes.intro}>
