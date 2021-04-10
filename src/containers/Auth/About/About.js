@@ -58,7 +58,6 @@ const About = React.memo(function ProjectCard() {
         <Card className={cx(cardStyles.root, shadowStyles.root)}>
           <BrandCardHeader
             image={logo}
-            extra={"3 minutes"}
           />
           <CardContent className={cardStyles.content}>
             <TextInfoContent

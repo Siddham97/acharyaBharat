@@ -9,6 +9,17 @@ export const Title = styled.p`
   margin-top: 0;
 `;
 
+export const Heading = styled.p`
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: 56px;
+  margin-right: 56px;
+  margin-top: 75px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+`;
+
 export const Container = styled.div`
   display: flex;
   flex-direction: column;

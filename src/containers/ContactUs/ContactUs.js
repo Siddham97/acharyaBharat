@@ -71,7 +71,6 @@ const ContactUs = React.memo(function ProjectCard() {
         <Card className={cx(cardStyles.root, shadowStyles.root)}>
           <BrandCardHeader
             image={logo}
-            extra={"4 minutes"}
           />
           <CardContent className={cardStyles.content}>
           <React.Fragment>

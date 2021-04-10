@@ -4,6 +4,7 @@ import {
   Container,
   Group,
   Title,
+  Heading,
   SubTitle,
   Text,
   Feature,
@@ -39,6 +40,10 @@ Card.Group = function CardGroup({ children, ...restProps }) {
 
 Card.Title = function CardTitle({ children, ...restProps }) {
   return <Title {...restProps}>{children}</Title>;
+};
+
+Card.Heading = function CardHeading({ children, ...restProps }) {
+  return <Heading {...restProps}>{children}</Heading>;
 };
 
 Card.SubTitle = function CardSubTitle({ children, ...restProps }) {

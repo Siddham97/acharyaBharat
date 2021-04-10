@@ -99,7 +99,7 @@ const useStyles = makeStyles((theme) => ({
   },
   contactus:{
     textDecoration: "none",
-  }
+  },
 }));
 
 const slideItems = [
@@ -337,80 +337,49 @@ function Dashboard({ darkTheme }) {
         <Box
           display="flex"
           flexDirection="column"
-          flexWrap="nowrap"
-          pt={matchLG ? 20 : matchMD ? 15 : 10}
-          pb={5}
+          justifyContent="center"
+          minHeight="90vh"
         >
-          <Box alignSelf="flex-start" maxWidth={500} m={5}>
-            <Box display="flex">
-              <Typography variant="h1" className={classes.titleNumber}>
-                1
+          <Box mx={5} minWidth={315} alignSelf="center">
+            <Box>
+              <Typography variant="h4" color="inherit">
+                How We Work?
               </Typography>
-              <Box ml={1} display="flex" flexDirection="column">
-                <Typography variant="h4">
-                  Easy to search the topic you want to learn or teaching
-                </Typography>
-                <Typography style={{ marginTop: 16 }}>
-                  Course Hub is collect on many resourses. People who study at
-                  the Course Hub can archive knowledge by join suitable topic.
-                </Typography>
-              </Box>
             </Box>
-          </Box>
-
-          <Box alignSelf="flex-end" maxWidth={500} m={5}>
-            <Box display="flex">
-              <Typography variant="h1" className={classes.titleNumber}>
-                2
+            <Box mt={3}>
+              <Typography>
+              AcharyaBharat works like one stop shop when it comes to your education. 
+              Letting you focus on your extra-curricular activities makes us different 
+              from the rest. All our experts are well-versed with academic writing content, 
+              proving online study material, online tutoring and video and audio lectures. 
+              Coping up with the changes in the surroundings, and utilising the available 
+              resources makes us a perfect choice for your next move.
               </Typography>
-              <Box ml={1} display="flex" flexDirection="column">
-                <Typography variant="h4">
-                  Join us to help share knowledge for the community
-                </Typography>
-                <Typography style={{ marginTop: 16 }}>
-                  We have an enthusiastic and responsible team of teachers from
-                  many companies and corporations with many years of experience.
-                  Join us to grow together.
-                </Typography>
-              </Box>
             </Box>
-          </Box>
 
-          <Box alignSelf="flex-start" maxWidth={500} m={5}>
-            <Box display="flex">
-              <Typography variant="h1" className={classes.titleNumber}>
-                3
+            <Box mt={3}>
+              <Typography>
+              We as a large pool of professionals are here to assist you with the best 
+              academic content writing and onlineservices. Excellent academic writing help 
+              online is right around the corner. Do not hesitate to ask to get your 
+              academics done; you work on your academics and focus on your extra circular 
+              activities, and our professionals will get your work done in no time. 
+              Sometimes, your schoolwork can be a task for you; avail our homework academic 
+              help and many more online academic help services in USA. And our professional 
+              writers will help you in achieving your desired results. We provide online academic 
+              help to all the students who have their deadlines to meet. Make the best use of 
+              our services that will help you score better.
               </Typography>
-              <Box ml={1} display="flex" flexDirection="column">
-                <Typography variant="h4">
-                  Course Hub users easy to achieve the desired skills
-                </Typography>
-                <Typography style={{ marginTop: 16 }}>
-                  Course Hub system is meticulously built to enhance the
-                  interaction between students and teachers. It provides an
-                  authentic and easy experience to gain knowledge as well as
-                  help teachers easily access students
-                </Typography>
-              </Box>
             </Box>
           </Box>
         </Box>
         {bottomSwoop}
       </Box>
 
-      <Box my={5} display="flex" alignContent="center" justifyContent="center">
-        {/* <Box width="100vh">
-          <GridList cellHeight={160} className={classes.gridList} cols={3}>
-            {tileData.map((tile) => (
-              <GridListTile key={tile.img} cols={tile.cols || 1}>
-                <img src={tile.img} alt={tile.title} />
-              </GridListTile>
-            ))}
-          </GridList>
-        </Box> */}
+      <Box mt={3} my={5} display="flex" alignContent="center" justifyContent="center">
         <Card.Group>
           <Card>
-            <Card.Title>Card</Card.Title>
+            <Card.Heading>Demo Videos</Card.Heading>
             <Card.Entities>
               {slideItems.map((item) => (
                 <Card.Item key={item.media} item={item}>
