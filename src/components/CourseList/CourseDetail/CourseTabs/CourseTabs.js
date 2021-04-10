@@ -62,7 +62,7 @@ const CourseTabs = () => {
           {...a11yProps(0)}
           classes={{ wrapper: classes.wrapper }}
         />
-        <GmailTabItem
+        {/* <GmailTabItem
           icon={<People />}
           label={"Curriculum"}
           {...a11yProps(1)}
@@ -85,7 +85,7 @@ const CourseTabs = () => {
           label={"Reviews"}
           {...a11yProps(4)}
           classes={{ wrapper: classes.wrapper }}
-        />
+        /> */}
       </GmailTabs>
 
       <Box ml={4}>
@@ -94,7 +94,7 @@ const CourseTabs = () => {
             <Overview />
           </TabPanel>
 
-          <TabPanel tabNum={tabNum} index={1}>
+          {/* <TabPanel tabNum={tabNum} index={1}>
             <Curriculum />
           </TabPanel>
 
@@ -108,7 +108,7 @@ const CourseTabs = () => {
 
           <TabPanel tabNum={tabNum} index={4}>
             Reviews
-          </TabPanel>
+          </TabPanel> */}
         </Paper>
       </Box>
     </Fragment>

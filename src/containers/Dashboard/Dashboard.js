@@ -106,36 +106,48 @@ const slideItems = [
   {
     media: course1,
     title: "Bharat Dwivedi",
-    subtitle: "Watch the awesome demo video from our team members!",
+    subtitle: "Team Lead!",
+    videolink:"tO9nvYzxINM",
+    imagelink:"https://elearning0706.cybersoft.edu.vn/hinhanh/dsa.jpg"
   },
   {
     media: course2,
     title: "Siddham Sharma",
-    subtitle: "Well just mix two colors and your are good to go!",
+    subtitle: "Consultant",
+    videolink:"MOVZTV8aLwE",
+    imagelink:"https://elearning0706.cybersoft.edu.vn/hinhanh/advanced-react-and-redux-2018-edition.png"
   },
   {
     media: course3,
-    title: "May the force be with you",
+    title: "Iti Sharma",
     subtitle:
-      "The Force is a metaphysical and ubiquitous power in the Star Wars fictional universe.",
+      "Head HR",
+      videolink:"MOVZTV8aLwE",
+    imagelink:"https://elearning0706.cybersoft.edu.vn/hinhanh/the-complete-android-oreo-developer-course-build-23-apps-.jpg"
   },
   {
     media: course4,
-    title: "May the force be with you",
+    title: "Isha Sharma",
     subtitle:
-      "The Force is a metaphysical and ubiquitous power in the Star Wars fictional universe.",
+      "Network Administrator",
+      videolink:"-nmf7ikciN0",
+    imagelink:"https://elearning0706.cybersoft.edu.vn/hinhanh/android-java-masterclass-become-an-app-developer.jpg"
   },
   {
     media: course5,
     title: "May the force be with you",
     subtitle:
       "The Force is a metaphysical and ubiquitous power in the Star Wars fictional universe.",
+      videolink:"tO9nvYzxINM",
+    imagelink:"https://elearning0706.cybersoft.edu.vn/hinhanh/advandge-programming.png"
   },
   {
     media: course6,
     title: "May the force be with you",
     subtitle:
       "The Force is a metaphysical and ubiquitous power in the Star Wars fictional universe.",
+      videolink:"tO9nvYzxINM",
+    imagelink:"https://elearning0706.cybersoft.edu.vn/hinhanh/ui-web-design-using-adobe-illustrator-cc.jpg"
   },
 ];
 
@@ -191,6 +203,8 @@ function Dashboard({ darkTheme }) {
   const user = JSON.parse(localStorage.getItem("user"));
   const localTheme = JSON.parse(localStorage.getItem("darkTheme"));
   const [handleOpen, setHandleOpen] = useState({ open: false });
+  const [videoSource,setVideoSource] = useState("");
+  const [imageSource,setImageSource] = useState("");
 
   let isTheme = darkTheme;
   if (!darkTheme) {
@@ -199,6 +213,13 @@ function Dashboard({ darkTheme }) {
 
   const handleClick = () => {
     setHandleOpen({ open: true });
+  };
+
+  const itemSelected = (item) => {
+    const videoSrc = slideItems.filter(el => el.media == item.media);
+    console.log(item,videoSrc);
+    setVideoSource(videoSrc[0].videolink);
+    setImageSource(videoSrc[0].imagelink);
   };
 
   const topSwoop = (
@@ -382,7 +403,7 @@ function Dashboard({ darkTheme }) {
             <Card.Heading>Demo Videos</Card.Heading>
             <Card.Entities>
               {slideItems.map((item) => (
-                <Card.Item key={item.media} item={item}>
+                <Card.Item key={item.media} item={item} itemSelected={itemSelected}>
                   <Card.Image src={item.media} />
                   <Card.Meta>
                     <Card.SubTitle>{item.title}</Card.SubTitle>
@@ -391,10 +412,10 @@ function Dashboard({ darkTheme }) {
                 </Card.Item>
               ))}
             </Card.Entities>
-            <Card.Feature src={tutor}>
+            <Card.Feature src={imageSource}>
               <Player>
                 <Player.Button />
-                <Player.Video src={video} />
+                <Player.Video src={videoSource} />
               </Player>
             </Card.Feature>
           </Card>

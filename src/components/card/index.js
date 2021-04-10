@@ -62,7 +62,7 @@ Card.Meta = function CardMeta({ children, ...restProps }) {
   return <Meta {...restProps}>{children}</Meta>;
 };
 
-Card.Item = function CardItem({ item, children, ...restProps }) {
+Card.Item = function CardItem({ item, itemSelected, children, ...restProps }) {
   const { setShowFeature, setItemFeature } = useContext(FeatureContext);
 
   return (
@@ -70,6 +70,7 @@ Card.Item = function CardItem({ item, children, ...restProps }) {
       onClick={() => {
         setItemFeature(item);
         setShowFeature(true);
+        itemSelected(item);
       }}
       {...restProps}
     >

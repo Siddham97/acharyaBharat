@@ -1,6 +1,7 @@
 import * as actionTypes from "./actionTypes";
 import axios from "../../axios";
-
+import fetchCoursesIndex from "../../store/fixtures/fetchCoursesIndex";
+import courses from "../../store/fixtures/courses";
 // ----------------- Course Index ------------------ //
 export const fetchCourseIndexStart = () => {
   return {
@@ -25,17 +26,12 @@ export const fetchCourseIndexFail = (error) => {
 export const fetchCourseIndex = (init) => {
   return (dispatch) => {
     dispatch(fetchCourseIndexStart());
-    axios
-      .get("/QuanLyKhoaHoc/LayDanhMucKhoaHoc")
-      .then((response) => {
-        dispatch(fetchCourseIndexSuccess(response.data));
+
+    var response = fetchCoursesIndex;
+        dispatch(fetchCourseIndexSuccess(response));
         if (init) {
-          dispatch(fetchCourses(response.data[0].maDanhMuc));
+          dispatch(fetchCourses(response[0].maDanhMuc));
         }
-      })
-      .catch((error) => {
-        dispatch(fetchCourseIndexFail(error));
-      });
   };
 };
 
@@ -74,15 +70,18 @@ export const fetchCourses = (courseType, group, keyWord) => {
       url = `/QuanLyKhoaHoc/LayDanhSachKhoaHoc?tenKhoaHoc=${keyWord}&MaNhom=${group}`;
     }
 
-    axios
-      .get(url)
-      .then((response) => {
-        // console.log("Courses List: ", response.data);
-        dispatch(fetchCoursesSuccess(response.data));
-      })
-      .catch((error) => {
-        dispatch(fetchCoursesFail(error));
-      });
+    var response = courses.filter(el => el.danhMucKhoaHoc.maDanhMucKhoahoc == courseType);
+ 
+    // firebase fetching of couses is required
+    // var response = [{"maKhoaHoc":"back-end-001","biDanh":"Education Content Development","tenKhoaHoc":"Education Content Development","moTa":"This course guides you from beginner to expert. Without knowledge bases, you'll become a master skilled Web Developer!","luotXem":1224,"hinhAnh":"https://elearning0706.cybersoft.edu.vn/hinhanh/5-programming-languages-front-end-back-end-web-development.jpg","maNhom":"GP08","ngayTao":"23/02/2020","soLuongHocVien":0,"nguoiTao":{"taiKhoan":"adminttt","hoTen":"adminttt","maLoaiNguoiDung":"GV","tenLoaiNguoiDung":"Giáo vụ"},"danhMucKhoaHoc":{"maDanhMucKhoahoc":"BackEnd","tenDanhMucKhoaHoc":"Lập trình Backend"}},{"maKhoaHoc":"back-end-003","biDanh":"Curriculum Design","tenKhoaHoc":"Curriculum Design","moTa":"fdasc testing23432","luotXem":0,"hinhAnh":"https://elearning0706.cybersoft.edu.vn/hinhanh/dsa.jpg","maNhom":"GP08","ngayTao":"19/11/2020","soLuongHocVien":0,"nguoiTao":{"taiKhoan":"adminttt","hoTen":"adminttt","maLoaiNguoiDung":"GV","tenLoaiNguoiDung":"Giáo vụ"},"danhMucKhoaHoc":{"maDanhMucKhoahoc":"backEnd","tenDanhMucKhoaHoc":"Lập trình Backend"}},{"maKhoaHoc":"backendf11","biDanh":"Quality Control","tenKhoaHoc":"Quality Control","moTa":"This course guides you from beginner to expert. Without knowledge bases, you'll become a master skilled Web Developer!","luotXem":0,"hinhAnh":"https://elearning0706.cybersoft.edu.vn/hinhanh/advanced-react-and-redux-2018-edition.png","maNhom":"GP08","ngayTao":"16/08/2020","soLuongHocVien":0,"nguoiTao":{"taiKhoan":"caochihieu","hoTen":"Cao Chi Hieu","maLoaiNguoiDung":"GV","tenLoaiNguoiDung":"Giáo vụ"},"danhMucKhoaHoc":{"maDanhMucKhoahoc":"BackEnd","tenDanhMucKhoaHoc":"Lập trình Backend"}},{"maKhoaHoc":"backendfrc","biDanh":"K12 Video Lessons","tenKhoaHoc":"K-12 Video Courses","moTa":"React can also render on the server using Node and power mobile apps using React Native.","luotXem":0,"hinhAnh":"https://elearning0706.cybersoft.edu.vn/hinhanh/advandge-programming.png","maNhom":"GP08","ngayTao":"16/08/2020","soLuongHocVien":0,"nguoiTao":{"taiKhoan":"caochihieu","hoTen":"Cao Chi Hieu","maLoaiNguoiDung":"GV","tenLoaiNguoiDung":"Giáo vụ"},"danhMucKhoaHoc":{"maDanhMucKhoahoc":"BackEnd","tenDanhMucKhoaHoc":"Lập trình Backend"}}]
+    // axios
+    //   .get(url)
+    //   .then((response) => {
+        dispatch(fetchCoursesSuccess(response));
+      // })
+      // .catch((error) => {
+      //   dispatch(fetchCoursesFail(error));
+      // });
   };
 };
 

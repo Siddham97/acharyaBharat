@@ -4,14 +4,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import BrandCardHeader from "@mui-treasury/components/cardHeader/brand";
-import { useN03TextInfoContentStyles } from "@mui-treasury/styles/textInfoContent/n03";
 import { useLightTopShadowStyles } from "@mui-treasury/styles/shadow/lightTop";
-import { Box, Avatar, Chip } from "@material-ui/core";
-
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
+import { Box } from "@material-ui/core";
 import logo from "../../assets/images/AB.jpeg";
 
 const useStyles = makeStyles((theme) => ({
@@ -47,17 +41,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const ContactUs = React.memo(function ProjectCard() {
-  const styles = useN03TextInfoContentStyles();
   const shadowStyles = useLightTopShadowStyles();
   const cardStyles = useStyles();
-
-  const handleDelete = () => {
-    console.info("You clicked the delete icon.");
-  };
-
-  const handleClick = () => {
-    console.info("You clicked the Chip.");
-  };
 
   return (
     <Box
@@ -74,79 +59,7 @@ const ContactUs = React.memo(function ProjectCard() {
           />
           <CardContent className={cardStyles.content}>
           <React.Fragment>
-      <Typography variant="h6" gutterBottom>
-        Contact Us
-      </Typography>
-      <form className={cardStyles.form} noValidate>
-      <Grid container spacing={3}>
-        <Grid item xs={12} sm={6}>
-          <TextField
-            variant="outlined"
-            required
-            id="firstName"
-            name="firstName"
-            label="First name"
-            fullWidth
-            autoComplete="given-name"
-          />
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <TextField
-            variant="outlined"
-            required
-            id="lastName"
-            name="lastName"
-            label="Last name"
-            fullWidth
-            autoComplete="family-name"
-          />
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <TextField
-            variant="outlined"
-            required
-            id="email"
-            name="email"
-            label="Email"
-            fullWidth
-            autoComplete="email"
-          />
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <TextField
-            variant="outlined"
-            id="phone"
-            name="phone"
-            label="Phone No"
-            fullWidth
-            autoComplete="phone"
-          />
-        </Grid>
-        <Grid item xs={12}>
-          <TextField
-            variant="outlined"
-            required
-            id="subject"
-            name="subject"
-            label="Subject"
-            fullWidth
-            autoComplete="subject"
-          />
-        </Grid>
-        <Grid item xs={12}>
-          <TextField multiline="true" rows="3" variant="outlined" id="message" name="message" label="Message" fullWidth />
-        </Grid>
-      </Grid>
-      <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            color="primary"
-            className={cardStyles.submit}
-          >
-            Send Message
-          </Button>
-      </form>
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfaiGMwJRXZ_OxaM8IprNFdXITCsWCSl0onvt3ZRpIdep0H0Q/viewform?embedded=true" width="640" height="1049" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
     </React.Fragment>
           </CardContent>
         </Card>

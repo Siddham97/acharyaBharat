@@ -20,9 +20,14 @@ Player.Video = function PlayerVideo({src, ...restProps}){
     return showPlayer ? ReactDOM.createPortal(
         <Overlay onClick={() => setShowPlayer(false)}>
             <Inner>
-                <video id="player" autoPlay controls>
-                    <source src={src} type="video/mp4" />
-                </video>
+            <iframe src={`https://www.youtube.com/embed/${src}`}
+            width="953"
+            height="580"
+        frameBorder='0'
+        allow='autoplay; encrypted-media'
+        allowFullScreen
+        title='video'
+/>
                 <Close />
             </Inner>
         </Overlay>,
