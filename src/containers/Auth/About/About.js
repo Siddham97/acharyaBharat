@@ -10,6 +10,7 @@ import { useLightTopShadowStyles } from "@mui-treasury/styles/shadow/lightTop";
 import { Box, Avatar, Chip } from "@material-ui/core";
 
 import DoneIcon from "@material-ui/icons/Done";
+import logo from "../../../assets/images/AB.jpeg";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -56,9 +57,7 @@ const About = React.memo(function ProjectCard() {
       <Box m={3}>
         <Card className={cx(cardStyles.root, shadowStyles.root)}>
           <BrandCardHeader
-            image={
-              "https://pngimage.net/wp-content/uploads/2018/06/react-icon-png-7.png"
-            }
+            image={logo}
             extra={"3 minutes"}
           />
           <CardContent className={cardStyles.content}>

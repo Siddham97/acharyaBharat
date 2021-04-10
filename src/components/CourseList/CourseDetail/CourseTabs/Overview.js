@@ -20,20 +20,24 @@ export default function Overview() {
           Description
         </Typography>
         <Typography variant="subtitle1" gutterBottom>
-          Description Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-          sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna
-          aliquam erat volutpat. Ut wisi enim ad minim laoreet dolore magna
-          aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud
-          exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea
-          commodo consequat consectetuer adipiscing elit, sed diam nonummy nibh
-          euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut
-          wisi enim ad minim veniam, quis nostrud exerci
+        ACADMASTERS offers top quality Educational Content Development services 
+        for CBSE, State Boards as well as ICSE/ISC board course curriculum. We 
+        also offer educational content for JEE Mains, JEE Advanced,and other 
+        competitive entrance examinations held in India as well as other countries.
+        All our content developers are industry veterans who possess years of 
+        experience and expertise in teaching or training students in their specialised
+         subjects. For we believe that great content can make learning simple and 
+         hassle-free.
+        So, if you are an e-learning service provider, connect with our team now. 
+        We will offer the best educational content developed by top industry 
+        professionals at affordable pricing.
         </Typography>
       </Box>
 
       <Box mt={2}>
         <Typography variant="h5" gutterBottom>
-          What You’ll Learn
+        Here is a glimpse of what we offer in the education sector to help students to 
+        forge a strong foundation for an erudite career.
         </Typography>
         <Grid container spacing={2}>
           <Grid item xs={12} md={6}>
@@ -42,47 +46,37 @@ export default function Overview() {
                 <ListItemIcon>
                   <Check />
                 </ListItemIcon>
-                <ListItemText primary="Setting up the environment" />
+                <ListItemText primary="Textbook Creations" />
               </ListItem>
               <ListItem>
                 <ListItemIcon>
                   <Check />
                 </ListItemIcon>
-                <ListItemText primary="Advanced HTML Practices" />
+                <ListItemText primary="Solution guide" />
               </ListItem>
               <ListItem>
                 <ListItemIcon>
                   <Check />
                 </ListItemIcon>
-                <ListItemText primary="Build a portfolio website" />
+                <ListItemText primary="Practice Papers" />
               </ListItem>
               <ListItem>
                 <ListItemIcon>
                   <Check />
                 </ListItemIcon>
-                <ListItemText primary="Responsive Designs" />
-              </ListItem>
-            </List>
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <List>
-              <ListItem>
-                <ListItemIcon>
-                  <Check />
-                </ListItemIcon>
-                <ListItemText primary="Understand HTML Programming" />
+                <ListItemText primary="Lesson Plan Creations" />
               </ListItem>
               <ListItem>
                 <ListItemIcon>
                   <Check />
                 </ListItemIcon>
-                <ListItemText primary="Code HTML" />
+                <ListItemText primary="Curriculum Designing" />
               </ListItem>
               <ListItem>
                 <ListItemIcon>
                   <Check />
                 </ListItemIcon>
-                <ListItemText primary="Start building beautiful websites" />
+                <ListItemText primary="Online or Live QA services" />
               </ListItem>
             </List>
           </Grid>
@@ -90,58 +84,20 @@ export default function Overview() {
       </Box>
 
       <Box mt={2}>
-        <Typography variant="h5" gutterBottom>
-          Requirements
-        </Typography>
-        <Grid container spacing={2}>
-          <Grid item>
-            <List>
-              <ListItem>
-                <ListItemIcon>
-                  <Create />
-                </ListItemIcon>
-                <ListItemText primary="Any computer will work: Windows, macOS or Linux" />
-              </ListItem>
-              <ListItem>
-                <ListItemIcon>
-                  <Create />
-                </ListItemIcon>
-                <ListItemText primary="Basic programming HTML and CSS." />
-              </ListItem>
-              <ListItem>
-                <ListItemIcon>
-                  <Create />
-                </ListItemIcon>
-                <ListItemText primary="Basic/Minimal understanding of JavaScript" />
-              </ListItem>
-            </List>
-          </Grid>
-        </Grid>
-      </Box>
-
-      <Box mt={2}>
-        <Typography variant="h5" gutterBottom>
-          Here Is Exactly What We Cover In This Course:
-        </Typography>
         <Typography variant="subtitle1" gutterBottom>
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-          nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
-          volutpat. Ut wisi enim ad minim laoreet dolore magna aliquam erat
-          volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
-          ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat
-          consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt
-          ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim
-          veniam, quis nostrud exerci Lorem ipsum dolor sit amet, consectetuer
-          adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
-          dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
-          nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex
-          ea commodo consequat. Nam liber tempor cum soluta nobis eleifend
-          option congue nihil imperdiet doming id quod mazim placerat facer
-          possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing
-          elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna
-          aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud
-          exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea
-          commodo consequat.
+        We also hold the capacity to deliver bulk content inshort notice while 
+        withholding the highest level of quality in all our deliverables. 
+        For we believe that the foundation to build a strong career by students 
+        starts at an early age. Hence, we deliver the best quality work within 
+        the decided timeline at the beginning of the work commencing.
+        </Typography>
+      </Box>
+
+      <Box mt={2}>
+        <Typography variant="subtitle1" gutterBottom>
+        Call us if you have a requirement for developing educational content 
+        in all spheres of imparting online education. We ensure that your 
+        decision of associating with us will be worthwhile.
         </Typography>
       </Box>
     </Fragment>

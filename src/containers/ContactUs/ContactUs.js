@@ -12,6 +12,7 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import logo from "../../assets/images/AB.jpeg";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -69,9 +70,7 @@ const ContactUs = React.memo(function ProjectCard() {
       <Box m={3}>
         <Card className={cx(cardStyles.root, shadowStyles.root)}>
           <BrandCardHeader
-            image={
-              "https://pngimage.net/wp-content/uploads/2018/06/react-icon-png-7.png"
-            }
+            image={logo}
             extra={"4 minutes"}
           />
           <CardContent className={cardStyles.content}>
