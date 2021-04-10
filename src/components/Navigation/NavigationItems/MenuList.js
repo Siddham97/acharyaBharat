@@ -85,63 +85,6 @@ const MenuList = (props) => {
     );
   });
 
-  const Courses = React.forwardRef(function MyComponent(props, ref) {
-    //  Spread the props to the underlying DOM element.
-    return (
-      <div {...props} ref={ref}>
-        <Link to="/courses" className={classes.navlink}>
-          <GmailSidebarItem
-            classes={{ collapsed: classes.collapsed, root: classes.root }}
-            color={"#1a73e8"}
-            startIcon={<ViewList className={classes.navIcon} />}
-            label={"Courses"}
-            amount={""}
-            {...commonProps("/courses")}
-            dotOnCollapsed={false}
-          />
-        </Link>
-      </div>
-    );
-  });
-
-  const CoursesManage = React.forwardRef(function MyComponent(props, ref) {
-    //  Spread the props to the underlying DOM element.
-    return (
-      <div {...props} ref={ref}>
-        <Link to="/courses-management" className={classes.navlink}>
-          <GmailSidebarItem
-            classes={{ collapsed: classes.collapsed, root: classes.root }}
-            color={"#8e44ad"}
-            startIcon={<InsertDriveFile className={classes.navIcon} />}
-            label={"Courses Manage"}
-            amount={1000}
-            {...commonProps("/courses-management")}
-            dotOnCollapsed={true}
-          />
-        </Link>
-      </div>
-    );
-  });
-
-  const StudentsManage = React.forwardRef(function MyComponent(props, ref) {
-    //  Spread the props to the underlying DOM element.
-    return (
-      <div {...props} ref={ref}>
-        <Link to="/users-management" className={classes.navlink}>
-          <GmailSidebarItem
-            classes={{ collapsed: classes.collapsed, root: classes.root }}
-            color={"#e37400"}
-            startIcon={<People className={classes.navIcon} />}
-            label={"Students Manage"}
-            amount={969}
-            {...commonProps("/users-management")}
-            dotOnCollapsed={true}
-          />
-        </Link>
-      </div>
-    );
-  });
-
   const About = React.forwardRef(function MyComponent(props, ref) {
     //  Spread the props to the underlying DOM element.
     return (
@@ -204,22 +147,6 @@ const MenuList = (props) => {
         <Tooltip title="Dashboard">
           <Dashboard />
         </Tooltip>
-
-        <Tooltip title="Courses">
-          <Courses />
-        </Tooltip>
-
-        {user && user.maLoaiNguoiDung === "GV" ? (
-          <Fragment>
-            <Tooltip title="Courses Manage">
-              <CoursesManage />
-            </Tooltip>
-
-            <Tooltip title="Students Manage">
-              <StudentsManage />
-            </Tooltip>
-          </Fragment>
-        ) : null}
 
         <Tooltip title="About">
           <About />

@@ -17,7 +17,7 @@ import DarkThemeSwitch from "../../SwitchButton/DarkThemeSwitch";
 
 import FacebookIcon from "@material-ui/icons/Facebook";
 import GitHubIcon from "@material-ui/icons/GitHub";
-import TwitterIcon from '@material-ui/icons/Twitter';
+import WhatsAppIcon from '@material-ui/icons/WhatsApp';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
 const useStyles = makeStyles((theme) => ({
@@ -78,11 +78,11 @@ const DropMenu = (props) => {
         <IconButton
           size="small"
           component={Link}
-          href="https://www.twitter.com/"
+          href="https://web.whatsapp.com/"
           target="_blank"
           rel="noopener"
         >
-          <TwitterIcon style={{color:"white"}}/>
+          <WhatsAppIcon style={{color:"white"}}/>
         </IconButton>
 
         <IconButton

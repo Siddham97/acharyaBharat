@@ -8,8 +8,9 @@ import { useMediaQuery, Avatar } from "@material-ui/core";
 import { GridList, GridListTile } from "@material-ui/core";
 import { Grid, Button, Box, Typography, Paper } from "@material-ui/core";
 
-import { LiveTv, AllInclusive, Bookmark } from "@material-ui/icons";
-
+import TapAndPlayIcon from '@material-ui/icons/TapAndPlay';
+import LaptopMacIcon from '@material-ui/icons/LaptopMac';
+import GroupIcon from '@material-ui/icons/Group';
 import Carousel from "react-material-ui-carousel";
 import Image from "material-ui-image";
 import CountUp from "react-countup";
@@ -96,6 +97,9 @@ const useStyles = makeStyles((theme) => ({
       fontSize: "4rem",
     },
   },
+  contactus:{
+    textDecoration: "none",
+  }
 }));
 
 const slideItems = [
@@ -160,53 +164,24 @@ const tileData = [
 
 const featureList = [
   {
-    icon: <LiveTv />,
-    title: "online courses",
-    subtitle: "Enjoy a variety of fresh topics",
-    count: <CountUp end={1000} duration={6} style={{ marginRight: 4 }} />,
-  },
-  {
-    icon: <Bookmark />,
-    title: "Expert instruction",
-    subtitle: "Find the right instructor for you",
+    icon: <LaptopMacIcon />,
+    title: "Fast & Convenient Source",
+    subtitle: "We make sure to deliver valuable results and outcomes.",
     count: null,
   },
   {
-    icon: <AllInclusive />,
-    title: "Lifetime access",
-    subtitle: "Learn on your schedule",
+    icon: <GroupIcon />,
+    title: "Modern Tools",
+    subtitle: "To deliver accurate and convenient results.",
+    count: null,
+  },
+  {
+    icon: <TapAndPlayIcon />,
+    title: "Online Tutoring",
+    subtitle: "An easy and convenient mode of learning.",
     count: null,
   },
 ];
-
-const AutoRotatingCarouselModal = ({ handleOpen, setHandleOpen, isMobile }) => {
-  return (
-    <div>
-      <AutoRotatingCarousel
-        label="Get started"
-        open={handleOpen.open}
-        onClose={() => setHandleOpen({ open: false })}
-        onStart={() => setHandleOpen({ open: false })}
-        autoplay={false}
-        hideArrows={false}
-        mobile={isMobile}
-      >
-        {slideItems.map((item) => (
-          <Slide
-            key={item.title}
-            media={<img src={item.media} alt={item.title} />}
-            title={item.title}
-            subtitle={item.subtitle}
-            mediaBackgroundStyle={{
-              background: `linear-gradient(120deg, #2980b9, #8e44ad)`,
-            }}
-            style={{ background: `linear-gradient(120deg, #2980b9, #8e44ad)` }}
-          />
-        ))}
-      </AutoRotatingCarousel>
-    </div>
-  );
-};
 
 function Dashboard({ darkTheme }) {
   const classes = useStyles();
@@ -254,19 +229,16 @@ function Dashboard({ darkTheme }) {
       <Grid container alignItems="center" className={classes.header}>
         <Grid item className={classes.heroText}>
           <Typography variant="h4" gutterBottom>
-            Acharya Bharat
+            AcharyaBharat
           </Typography>
           <Typography variant="subtitle1" gutterBottom>
-            We Are Eager To Give You Best Education Service Online
+            Would You Like To Start A Project With Us?
           </Typography>
-          <Button variant="contained" color="primary" onClick={handleClick}>
+          <Link to="/contact-us" className={classes.contactus}>
+          <Button variant="contained" color="primary">
             Contact Us
           </Button>
-          <AutoRotatingCarouselModal
-            isMobile={matchSM}
-            handleOpen={handleOpen}
-            setHandleOpen={setHandleOpen}
-          />
+          </Link>
         </Grid>
       </Grid>
 
@@ -312,36 +284,32 @@ function Dashboard({ darkTheme }) {
           <Box mx={5} minWidth={315} alignSelf="center">
             <Box>
               <Typography variant="h4" color="inherit">
-                Choose and Enroll your favor courses
+                Why Choose us?
               </Typography>
             </Box>
             <Box mt={3}>
               <Typography>
-                Simply sign up as a verified user on Course Hub to start to
-                access many good course resourses.
+              Most agencies will tell you what you want to hear, but 
+              we are a little distinct. We don’t profess to be the biggest 
+              agency, or to have global networks. However, we are proud of 
+              the business relationships we have flourished. This is witnessed
+               by a major percentage of our work being exclusive, meaning 
+               our clients acknowledge the excellent quality of work and 
+               the exceptional quality of candidates placed with them.
               </Typography>
             </Box>
-            {user ? null : (
-              <Box mt={2}>
-                <Button
-                  variant="contained"
-                  color="primary"
-                  component={Link}
-                  to={"/sign-up"}
-                  style={{ width: 150 }}
-                >
-                  Sign up
-                </Button>
-                <Button
-                  variant="outlined"
-                  component={Link}
-                  to={"/sign-in"}
-                  style={{ width: 150, marginLeft: 8, color: "inherit" }}
-                >
-                  Log in
-                </Button>
-              </Box>
-            )}
+
+            <Box mt={3}>
+              <Typography>
+              Our main focus is to act like a bridge between our client and the 
+              aspiring candidate. We don’t charge any cut or commission for 
+              recruitment process either from client side or candidate end. 
+              Our main concern is to provide a platform so that candidates 
+              can channelize their skills and knowledge to achieve their 
+              goals and thus helping the clients in leveraging them as 
+              valuable resources.
+              </Typography>
+            </Box>
           </Box>
         </Box>
         {bottomSwoop}
