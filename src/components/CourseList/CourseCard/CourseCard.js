@@ -19,7 +19,7 @@ import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: 200,
+    width: 300,
   },
   title: {
     height: 70,

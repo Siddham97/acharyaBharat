@@ -149,7 +149,7 @@ export const Feature = styled.div`
   height: 360px;
   background-position-x: right;
   background-repeat: no-repeat;
-  background-color: #46699d;
+  background-color: #3f669f;
 
   @media (max-width: 1000px) {
     height: auto;
