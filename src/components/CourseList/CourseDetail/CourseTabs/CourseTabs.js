@@ -1,19 +1,46 @@
-import React, { useState, Fragment } from "react";
-
+import React, { useState,useEffect } from "react";
+import cx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
-import { GmailTabs, GmailTabItem } from "@mui-treasury/components/tabs/gmail";
-import { Box, Paper } from "@material-ui/core";
-import { Inbox, LocalOffer, People, Info } from "@material-ui/icons";
+import Card from "@material-ui/core/Card";
+import CardContent from "@material-ui/core/CardContent";
+import BrandCardHeader from "@mui-treasury/components/cardHeader/brand";
+import TextInfoContent from "@mui-treasury/components/content/textInfo";
+import { useN03TextInfoContentStyles } from "@mui-treasury/styles/textInfoContent/n03";
+import { useLightTopShadowStyles } from "@mui-treasury/styles/shadow/lightTop";
+import { Box, Avatar, Chip } from "@material-ui/core";
 
-import Overview from "./Overview";
-import Curriculum from "./Curriculum";
+import DoneIcon from "@material-ui/icons/Done";
+import logo from "../../../../assets/images/AB.jpeg";
+import CourseDesc from "../../../../store/fixtures/courseDesc.json";
+import {
+  Grid,
+  Typography,
+  List,
+  ListItem,
+  ListItemText,
+  ListItemIcon,
+} from "@material-ui/core";
+import { Check, Create } from "@material-ui/icons";
+import Skeleton from "@material-ui/lab/Skeleton";
 
 const useStyles = makeStyles((theme) => ({
-  gmailTabs: {
-    backgroundColor: "inherit",
+  root: {
+    maxWidth: 1000,
+    borderRadius: 20,
   },
-  wrapper: {
-    color: "darkgray !important",
+  content: {
+    padding: 24,
+  },
+  background: {
+    background: "linear-gradient(120deg, #2980b9, #8e44ad)",
+  },
+  chip: {
+    display: "flex",
+    justifyContent: "center",
+    flexWrap: "wrap",
+    "& > *": {
+      margin: theme.spacing(0.5),
+    },
   },
 }));
 
@@ -38,80 +65,72 @@ function a11yProps(index) {
   };
 }
 
-const CourseTabs = () => {
-  const classes = useStyles();
-  const [tabNum, setTabNum] = useState(0);
+function setDetails(id) {
 
-  const handleChange = (_, newValue) => {
-    setTabNum(newValue);
-  };
+  const cDetail = CourseDesc.filter(el => el.identifier === id)
+  return cDetail[0]
+}
+
+const CourseTabs = (props) => {
+  const styles = useN03TextInfoContentStyles();
+  const shadowStyles = useLightTopShadowStyles();
+  const cardStyles = useStyles();
+
+  const { courseId } = props;
+  const [courseDetail,setCourseDetail] = useState("");
+  const data = setDetails(courseId); 
+
+  useEffect(() => {
+    setCourseDetail(data);
+  }, [courseId]);
 
   return (
-    <Fragment>
-      <GmailTabs
-        value={tabNum}
-        onChange={handleChange}
-        variant="scrollable"
-        scrollButtons="on"
-        aria-label="scrollable force tabs"
-        className={classes.gmailTabs}
-      >
-        <GmailTabItem
-          icon={<Inbox />}
-          label={"Overview"}
-          {...a11yProps(0)}
-          classes={{ wrapper: classes.wrapper }}
-        />
-        {/* <GmailTabItem
-          icon={<People />}
-          label={"Curriculum"}
-          {...a11yProps(1)}
-          classes={{ wrapper: classes.wrapper }}
-        />
-        <GmailTabItem
-          icon={<LocalOffer />}
-          label={"FAQ"}
-          {...a11yProps(2)}
-          classes={{ wrapper: classes.wrapper }}
-        />
-        <GmailTabItem
-          icon={<Info />}
-          label={"Announcement"}
-          {...a11yProps(3)}
-          classes={{ wrapper: classes.wrapper }}
-        />
-        <GmailTabItem
-          icon={<Info />}
-          label={"Reviews"}
-          {...a11yProps(4)}
-          classes={{ wrapper: classes.wrapper }}
-        /> */}
-      </GmailTabs>
-
-      <Box ml={4}>
-        <Paper elevation={0}>
-          <TabPanel tabNum={tabNum} index={0}>
-            <Overview />
-          </TabPanel>
-
-          {/* <TabPanel tabNum={tabNum} index={1}>
-            <Curriculum />
-          </TabPanel>
-
-          <TabPanel tabNum={tabNum} index={2}>
-            FAQ
-          </TabPanel>
-
-          <TabPanel tabNum={tabNum} index={3}>
-            Announcement
-          </TabPanel>
-
-          <TabPanel tabNum={tabNum} index={4}>
-            Reviews
-          </TabPanel> */}
-        </Paper>
+<Box
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
+      minHeight={"92.2vh"}
+    >
+      <Box m={3}>
+        <Card className={cx(cardStyles.root, shadowStyles.root)}>
+          <BrandCardHeader
+            image={logo}
+          />
+          {courseDetail ? (
+             <CardContent className={cardStyles.content}>
+             <TextInfoContent
+               classes={styles}
+               heading={courseDetail.title}
+               body={courseDetail.content}
+             />
+             <Box mt={2}>
+         <Typography>
+            {courseDetail.subText}
+         </Typography>
+         <Grid container spacing={2}>
+           <Grid item xs={12} md={6}>
+             {/* <List>
+             {courseDetail.services.map((info, index) => (
+             <ListItem key={index}>
+               <ListItemIcon>
+                   <Check />
+               </ListItemIcon>
+               <ListItemText primary={info} />
+             </ListItem>
+           ))}
+             </List> */}
+             {courseDetail.services}
+           </Grid>
+         </Grid>
+       </Box>
+           </CardContent>
+          ) : (
+            <Skeleton variant="rect" width={"100%"} height={150} />
+          )}
+         
+        </Card>
       </Box>
-    </Fragment>
+    </Box>
   );
 };
 

@@ -36,6 +36,9 @@ const useStyles = makeStyles((theme) => ({
       margin: theme.spacing(0.5),
     },
   },
+  background: {
+    background: "linear-gradient(120deg, #2980b9, #8e44ad)",
+  },
 }));
 
 function CourseDetail(props) {
@@ -63,46 +66,6 @@ function CourseDetail(props) {
   }, [match.params.id, onFetchUserListInThisCourse]);
 
   let nameList = [];
-  let userListRender;
-  if (userList && userList.lstHocVien) {
-    userListRender = (
-      <Box mx={3}>
-        <AvatarGroup max={6}>
-          {userList.lstHocVien.map((user, index) => {
-            nameList.push(user.taiKhoan);
-            return (
-              <Tooltip key={user.taiKhoan} title={user.taiKhoan}>
-                <Avatar
-                  alt={user.hoTen}
-                  src={`https://i.pravatar.cc/150?img=${index + 1}`}
-                />
-              </Tooltip>
-            );
-          })}
-        </AvatarGroup>
-      </Box>
-    );
-  }
-
-  let showAllUserRender;
-  if (onShow && nameList) {
-    showAllUserRender = (
-      <Box className={classes.chipBox}>
-        {nameList.map((name, index) => (
-          <Chip
-            key={`${name}${index}`}
-            avatar={
-              <Avatar
-                alt={name}
-                src={`https://i.pravatar.cc/150?img=${index + 1}`}
-              />
-            }
-            label={name}
-          />
-        ))}
-      </Box>
-    );
-  }
 
   let isMe = false;
   if (nameList && myInfo && nameList.length > 0) {
@@ -110,75 +73,9 @@ function CourseDetail(props) {
   }
 
   return (
-    <Grid container direction={matchMD ? "row" : "column-reverse"}>
+    <Grid className={classes.background} container direction={matchMD ? "row" : "column-reverse"}>
       <Grid item xs={matchMD ? 8 : 12}>
-        <Box py={onShow ? 5 : 0}>
-          <Grid container alignItems="center" style={{ minHeight: 350 }}>
-            <Box mx={7} width={"100%"}>
-              <Typography variant="h4" gutterBottom>
-                {loading ? (
-                  <Skeleton variant="text" width={"100%"} />
-                ) : (
-                  courseDetail.tenKhoaHoc
-                )}
-              </Typography>
-              <Typography gutterBottom>
-                {loading ? (
-                  <Skeleton variant="text" width={"100%"} />
-                ) : (
-                  courseDetail.moTa
-                )}
-              </Typography>
-              <HoverRating />
-
-              <Box>
-                {loading ? (
-                  <Skeleton variant="text" width={"50%"} />
-                ) : (
-                  <Grid container alignItems="center">
-                    <Box mr={3}>Created by {nguoiTao}</Box>
-                    <Box>Last updated {courseDetail.ngayTao}</Box>
-                  </Grid>
-                )}
-              </Box>
-
-              {myInfo ? (
-                <Box my={2}>
-                  {loading ? (
-                    <Skeleton variant="text" width={"60%"} />
-                  ) : (
-                    <Grid container alignItems="center">
-                      <Box display="flex" flexDirection="column" ml={1}>
-                        <Box display="flex" alignItems="center">
-                          <PersonAddIcon
-                            fontSize="small"
-                            style={{ margin: "0 10" }}
-                          />
-                          {userList && userList.lstHocVien
-                            ? userList.lstHocVien.length
-                            : "0"}
-                        </Box>
-                        <Typography>Enerolled</Typography>
-                      </Box>
-                      {userListRender}
-                      <Tooltip title="Show All">
-                        <Switch
-                          classes={switchStyles}
-                          checked={onShow}
-                          onChange={(e) => setOnShow(e.target.checked)}
-                        />
-                      </Tooltip>
-                    </Grid>
-                  )}
-                </Box>
-              ) : null}
-
-              {showAllUserRender}
-            </Box>
-          </Grid>
-        </Box>
-        {/* Detail */}
-        <CourseTabs />
+        <CourseTabs courseId={match.params.id}/>
       </Grid>
 
       <Grid item xs={matchMD ? 4 : 12}>

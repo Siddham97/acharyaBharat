@@ -22,6 +22,10 @@ import BuildIcon from "@material-ui/icons/Build";
 
 import { useSoftRiseShadowStyles } from "@mui-treasury/styles/shadow/softRise";
 import { useSlopeCardMediaStyles } from "@mui-treasury/styles/cardMedia/slope";
+import Divider from '@material-ui/core/Divider';
+import contactInfoImage from "../../../assets/images/contactInfo.jpg";
+import MailIcon from '@material-ui/icons/Mail';
+import LocationOnIcon from '@material-ui/icons/LocationOn';
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -65,9 +69,10 @@ const ShowcaseCard = (props) => {
   const shadowStyles = useSoftRiseShadowStyles();
 
   const { isMe, error, success } = props;
-  const { imageLink, courseId, onEnroll, onUserClearMessage } = props;
+  const { courseId, onEnroll, onUserClearMessage } = props;
 
   const user = JSON.parse(localStorage.getItem("user"));
+  const imageLink = contactInfoImage;
 
   const { enqueueSnackbar } = useSnackbar();
 
@@ -83,22 +88,21 @@ const ShowcaseCard = (props) => {
   }, [error, success, enqueueSnackbar, onUserClearMessage]);
 
   const infoList = [
-    { icon: <FindInPageIcon fontSize="small" />, text: "1 article" },
     {
-      icon: <AllInclusiveIcon fontSize="small" />,
-      text: "Full lifetime accesso",
+      icon: <LocationOnIcon fontSize="small" />,
+      text: "4578 Marmora Road, Glasgow D04 89GR",
+    },
+    {
+      icon: <MailIcon fontSize="small" />,
+      text: "info@demolink.org",
     },
     {
       icon: <PhoneIphoneIcon fontSize="small" />,
-      text: "Access on mobile and TV",
+      text: "+91 9312601398",
     },
     {
-      icon: <BuildIcon fontSize="small" />,
-      text: "SkillsFuture Credit eligible",
-    },
-    {
-      icon: <VerifiedUserIcon fontSize="small" />,
-      text: "Certificate of Completion",
+      icon: <PhoneIphoneIcon fontSize="small" />,
+      text: "+91 8562601398",
     },
   ];
 
@@ -109,41 +113,15 @@ const ShowcaseCard = (props) => {
       ) : (
         <Skeleton variant="rect" width={"100%"} height={150} />
       )}
-      <Avatar className={cardStyles.avatar} src={"https://i.pravatar.cc/300"} />
-
       <Box mt={2}>
         <Typography align="center" variant="h5" gutterBottom>
-          Free 100%
+          Contact Info
         </Typography>
       </Box>
-
-      {user && user.accessToken ? (
-        <Box mx={2}>
-          <Button
-            size="small"
-            onClick={() => onEnroll(courseId, isMe)}
-            className={cardStyles.button}
-          >
-            {isMe ? "Leave this course" : "Enroll Now"}
-          </Button>
-        </Box>
-      ) : (
-        <Box mx={2}>
-          <Box
-            component={Link}
-            to={"/sign-in"}
-            style={{ textDecoration: "none" }}
-          >
-            <Button size="small" className={cardStyles.button}>
-              Login to Enroll
-            </Button>
-          </Box>
-        </Box>
-      )}
-
+      <Divider light />
       <Box mt={2}>
         <Box ml={2}>
-          <Typography variant="subtitle1">This course includes</Typography>
+          <Typography variant="subtitle1">Get In Touch</Typography>
         </Box>
         <List disablePadding dense>
           {infoList.map((info, index) => (

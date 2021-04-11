@@ -66,38 +66,8 @@ const CourseCard = ({ course }) => {
           >
             {course.tenKhoaHoc}
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            {course.luotXem} views
-          </Typography>
         </CardContent>
       </CardActionArea>
-
-      <CardActions disableSpacing>
-        <IconButton aria-label="share">
-          <Share />
-        </IconButton>
-        <IconButton aria-label="add to favorites">
-          <Favorite />
-        </IconButton>
-        <IconButton
-          className={clsx(classes.expand, {
-            [classes.expandOpen]: expanded,
-          })}
-          onClick={handleExpandClick}
-          aria-expanded={expanded}
-          aria-label="show more"
-        >
-          <ExpandMore />
-        </IconButton>
-      </CardActions>
-
-      <Collapse in={expanded} timeout="auto" unmountOnExit>
-        <CardContent>
-          <Typography paragraph variant="body2">
-            {course.moTa}
-          </Typography>
-        </CardContent>
-      </Collapse>
     </Card>
   );
 };
