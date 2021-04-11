@@ -282,13 +282,9 @@ function Dashboard({ darkTheme }) {
       </Box>
 
       <Box my={5} style={{ minHeight: 520 }}>
-        <Box mx={6} py={3}>
+        <Box mx={6} py={3} display="flex" justifyContent="center">
           <Typography variant="h5" gutterBottom>
-            <strong>The world's most useless selection of courses</strong>
-          </Typography>
-          <Typography variant="subtitle1" gutterBottom>
-            Choose from 1000 online video courses with new additions published
-            every decade
+            <strong>Choose From A Wide Variety of Services Offered by AcharyaBharat</strong>
           </Typography>
         </Box>
         <CourseList />
