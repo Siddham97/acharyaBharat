@@ -106,37 +106,42 @@ const slideItems = [
   {
     media: course1,
     title: "Bharat Dwivedi",
-    subtitle: "Team Lead!",
+    subtitle: "The Force is a metaphysical and ubiquitous power in the Star Wars fictional universe.",
+    desc: "Digging in the textbooks for hours to match the solution takes half of the time for every student. Verification of the solutions plays an important role to give the last-minute surety and satisfaction. Our education experts, works to provide exactly what the students and our clients look for. Textbook solutions make it convenient and comfortable for both the teachers and the students to verify their understandings, learnings and efforts of the teachings gained.",
     videolink:"tO9nvYzxINM",
     imagelink:"https://elearning0706.cybersoft.edu.vn/hinhanh/dsa.jpg"
   },
   {
     media: course2,
     title: "Siddham Sharma",
-    subtitle: "Consultant",
+    subtitle: "The Force is a metaphysical and ubiquitous power in the Star Wars fictional universe.",
+    desc: "Web-based education or online tutoring support has been I trends past few years. Coping up with the modernised techniques and trends, online education has made it convenient and comfortable for the students to understand better and have a transparency of learning and teaching. With technology creating new opportunities for the students for their education, online tutoring has taken over easily.",
     videolink:"MOVZTV8aLwE",
     imagelink:"https://elearning0706.cybersoft.edu.vn/hinhanh/advanced-react-and-redux-2018-edition.png"
   },
   {
     media: course3,
     title: "Iti Sharma",
-    subtitle:
-      "Head HR",
+    subtitle: "The Force is a metaphysical and ubiquitous power in the Star Wars fictional universe.",
+    desc:
+      "Having a team of qualified professionals and academic writing experts, we offer academic content writing services for the students to ease out their workload and focus on their extra-curricular activities. We are one of the leading companies when it comes to helping the students with their assignments work. Our solutions are 100% authentic and plagiarism free which will make your assignments appropriate and will definitely help you in achieving good results.",
       videolink:"MOVZTV8aLwE",
     imagelink:"https://elearning0706.cybersoft.edu.vn/hinhanh/the-complete-android-oreo-developer-course-build-23-apps-.jpg"
   },
   {
     media: course4,
     title: "Isha Sharma",
-    subtitle:
-      "Network Administrator",
+    subtitle: "The Force is a metaphysical and ubiquitous power in the Star Wars fictional universe.",
+    desc:
+      "Gaining only the theoretical knowledge is never enough to understand the basis of every subject. Practical knowledge works as another important part in understanding every subject in detail. To make sure each and every part is conveyed and understood crystal clearly, we offer educational videos conducted by our experts and professionals using AR and VR support for better understanding of the coursework.",
       videolink:"-nmf7ikciN0",
     imagelink:"https://elearning0706.cybersoft.edu.vn/hinhanh/android-java-masterclass-become-an-app-developer.jpg"
   },
   {
     media: course5,
     title: "May the force be with you",
-    subtitle:
+    subtitle: "The Force",
+    desc:
       "The Force is a metaphysical and ubiquitous power in the Star Wars fictional universe.",
       videolink:"tO9nvYzxINM",
     imagelink:"https://elearning0706.cybersoft.edu.vn/hinhanh/advandge-programming.png"
@@ -144,7 +149,8 @@ const slideItems = [
   {
     media: course6,
     title: "May the force be with you",
-    subtitle:
+    subtitle: "The Force",
+    desc:
       "The Force is a metaphysical and ubiquitous power in the Star Wars fictional universe.",
       videolink:"tO9nvYzxINM",
     imagelink:"https://elearning0706.cybersoft.edu.vn/hinhanh/ui-web-design-using-adobe-illustrator-cc.jpg"
@@ -332,21 +338,29 @@ function Dashboard({ darkTheme }) {
         {bottomSwoop}
       </Box>
 
-      <Box my={5} display="flex" alignContent="center" justifyContent="center">
-        <Box width="100vh">
-          <Carousel
-            animation={"slide"}
-            timeout={500}
-            indicators={false}
-            className={classes.carousel}
-          >
-            {slideItems.map((item) => (
-              <Paper key={item.title}>
-                <Image src={item.media} aspectRatio={16 / 9} />
-              </Paper>
-            ))}
-          </Carousel>
-        </Box>
+      <Box mt={3} my={5} display="flex" alignContent="center" justifyContent="center">
+        <Card.Group>
+          <Card>
+            <Card.Heading>Demo Videos</Card.Heading>
+            <Card.Entities>
+              {slideItems.map((item) => (
+                <Card.Item key={item.media} item={item} itemSelected={itemSelected}>
+                  <Card.Image src={item.media} />
+                  <Card.Meta>
+                    <Card.SubTitle>{item.title}</Card.SubTitle>
+                    <Card.Text>{item.subtitle}</Card.Text>
+                  </Card.Meta>
+                </Card.Item>
+              ))}
+            </Card.Entities>
+            <Card.Feature src={imageSource}>
+              <Player>
+                <Player.Button />
+                <Player.Video src={videoSource} />
+              </Player>
+            </Card.Feature>
+          </Card>
+      </Card.Group>
       </Box>
 
       <Box className={classes.intro}>
@@ -393,31 +407,23 @@ function Dashboard({ darkTheme }) {
         {bottomSwoop}
       </Box>
 
-      <Box mt={3} my={5} display="flex" alignContent="center" justifyContent="center">
-        <Card.Group>
-          <Card>
-            <Card.Heading>Demo Videos</Card.Heading>
-            <Card.Entities>
-              {slideItems.map((item) => (
-                <Card.Item key={item.media} item={item} itemSelected={itemSelected}>
-                  <Card.Image src={item.media} />
-                  <Card.Meta>
-                    <Card.SubTitle>{item.title}</Card.SubTitle>
-                    <Card.Text>{item.subtitle}</Card.Text>
-                  </Card.Meta>
-                </Card.Item>
-              ))}
-            </Card.Entities>
-            <Card.Feature src={imageSource}>
-              <Player>
-                <Player.Button />
-                <Player.Video src={videoSource} />
-              </Player>
-            </Card.Feature>
-          </Card>
-      </Card.Group>
+      <Box my={5} display="flex" alignContent="center" justifyContent="center">
+        <Box width="100vh">
+          <Carousel
+            animation={"slide"}
+            timeout={500}
+            indicators={false}
+            className={classes.carousel}
+          >
+            {slideItems.map((item) => (
+              <Paper key={item.title}>
+                <Image src={item.media} aspectRatio={16 / 9} />
+              </Paper>
+            ))}
+          </Carousel>
+        </Box>
       </Box>
-
+      
       <Box className={classes.intro}>
         {topSwoop}
         <Box

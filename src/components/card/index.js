@@ -90,7 +90,7 @@ Card.Feature = function CardFeature({ children, src, ...restProps }) {
     <Feature {...restProps} src={src}>
       <Content>
         <FeatureTitle>{itemFeature.title}</FeatureTitle>
-        <FeatureText>{itemFeature.subtitle}</FeatureText>
+        <FeatureText>{itemFeature.desc}</FeatureText>
         <FeatureClose onClick={() => setShowFeature(false)}>
           <img src={close} alt="Close" />
         </FeatureClose>

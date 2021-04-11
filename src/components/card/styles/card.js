@@ -87,7 +87,7 @@ export const Image = styled.img`
   width: 100%;
   max-width: 305px;
   cursor: pointer;
-  height: auto;
+  height: 160px;
   padding: 0;
   margin: 0;
 `;
@@ -149,7 +149,7 @@ export const Feature = styled.div`
   height: 360px;
   background-position-x: right;
   background-repeat: no-repeat;
-  background-color: black;
+  background-color: #46699d;
 
   @media (max-width: 1000px) {
     height: auto;

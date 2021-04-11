@@ -1,6 +1,7 @@
 import React, {useState,useContext, createContext} from 'react';
 import ReactDOM from 'react-dom';
 import {Container, Button, Overlay, Inner, Close} from './styles/player';
+import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 
 export const PlayerContext = createContext();
 
@@ -39,6 +40,6 @@ Player.Button = function PlayerButton({...restProps}){
     const {showPlayer, setShowPlayer} = useContext(PlayerContext);
 
     return (<Button onClick={() => setShowPlayer((showPlayer) => !showPlayer)}>
-        Play
+        <PlayArrowIcon />Play
     </Button>)
 }

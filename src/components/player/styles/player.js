@@ -63,6 +63,7 @@ export const Close = styled.button`
 
 export const Button = styled.button`
   background-color: #e50914;
+  border-radius:0.3rem;
   border-color: #ff0a16;
   width: 115px;
   height: 45px;
@@ -76,6 +77,7 @@ export const Button = styled.button`
   align-items: center;
   justify-content: center;
   padding-left: 0;
+  margin-top: 4px;
 
   &:hover {
     transform: scale(1.05);
