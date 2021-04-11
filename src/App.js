@@ -16,6 +16,7 @@ import CoursesManager from "./containers/CoursesManager/CoursesManager";
 import PageNotFound from "./containers/PageNotFound/PageNotFound";
 import About from "./containers/Auth/About/About";
 import ContactUs from "./containers/ContactUs/ContactUs";
+import {FooterContainer} from "./containers/footer/footer";
 
 const RouteUser = ({ Component, ...props }) => {
   return (
@@ -82,6 +83,7 @@ const App = ({ onTryAutoSignup }) => {
         {/* Page Not Found */}
         <Route component={PageNotFound} />
       </Switch>
+      <FooterContainer />
     </BrowserRouter>
   );
 };

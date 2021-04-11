@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import clsx from "clsx";
+import cx from "clsx";
+import { useSoftRiseShadowStyles } from "@mui-treasury/styles/shadow/softRise";
 
 import {
   Card,
@@ -42,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
 
 const CourseCard = ({ course }) => {
   const classes = useStyles();
-
+  const shadowStyles = useSoftRiseShadowStyles();
   const [expanded, setExpanded] = useState(false);
 
   const handleExpandClick = () => {
@@ -50,7 +51,7 @@ const CourseCard = ({ course }) => {
   };
 
   return (
-    <Card className={classes.root}>
+    <Card className={cx(classes.root, shadowStyles.root)}>
       <CardActionArea component={Link} to={`/courses/${course.maKhoaHoc}`}>
         <CardMedia
           className={classes.media}

@@ -79,7 +79,7 @@ export const AvatarInfo = React.memo(function ProfileCard() {
       <Typography className={styles.subheader}>
       </Typography>
       <Typography className={styles.subheader} style={{ marginBottom: 0 }}>
-        Contact
+        Connect With Us.
       </Typography>
       <Box display="flex" justifyContent="center">
         <IconButton

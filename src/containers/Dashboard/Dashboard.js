@@ -40,6 +40,12 @@ import Card from "../../components/card";
 import tutor from "../../assets/images/tutor.jpg";
 import video from "../../assets/videos/video.mp4";
 
+import Accordion from '@material-ui/core/Accordion';
+import AccordionDetails from '@material-ui/core/AccordionDetails';
+import AccordionSummary from '@material-ui/core/AccordionSummary';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import MenuBookIcon from '@material-ui/icons/MenuBook';
+
 const useStyles = makeStyles((theme) => ({
   heroText: {
     position: "absolute",
@@ -100,6 +106,46 @@ const useStyles = makeStyles((theme) => ({
   contactus:{
     textDecoration: "none",
   },
+  root: {
+    width: '828px',
+    "@media (max-width: 600px)": {
+      width: "auto",
+    },
+  },
+  heading: {
+    color:"white",
+    fontSize: theme.typography.pxToRem(15),
+    flexShrink: 0,
+  },
+  secondaryHeading: {
+    fontSize: theme.typography.pxToRem(15),
+    color: theme.palette.text.secondary,
+  },
+  accordian:{
+    zIndex: theme.zIndex.drawer + 1,
+    background: "linear-gradient(120deg, #2980b9, #8e44ad)",
+    marginBottom:"15px"
+  },
+  accordianSummary:{
+    backgroundColor:"white"
+  },
+  expand: {
+    fill: "white"
+  },
+  container:{
+    display: "flex",
+    alignItems: "center"
+  },
+  border: {
+    borderBottom: "1px solid #4c5593",
+    width: "100%"
+  },
+  content: {
+    padding: "0 10px 0 10px"
+  },
+  bookIcon: {
+    color:"#4c5593"
+  }
 }));
 
 const slideItems = [
@@ -211,6 +257,11 @@ function Dashboard({ darkTheme }) {
   const [handleOpen, setHandleOpen] = useState({ open: false });
   const [videoSource,setVideoSource] = useState("");
   const [imageSource,setImageSource] = useState("");
+  const [expanded, setExpanded] = React.useState(false);
+
+  const handleChange = (panel) => (event, isExpanded) => {
+    setExpanded(isExpanded ? panel : false);
+  };
 
   let isTheme = darkTheme;
   if (!darkTheme) {
@@ -226,6 +277,18 @@ function Dashboard({ darkTheme }) {
     console.log(item,videoSrc);
     setVideoSource(videoSrc[0].videolink);
     setImageSource(videoSrc[0].imagelink);
+  };
+
+  const Divider = ({ children }) => {
+    return (
+      <div className={classes.container}>
+        <div className={classes.border} />
+        <span className={classes.content}>
+          {children}
+        </span>
+        <div className={classes.border} />
+      </div>
+    );
   };
 
   const topSwoop = (
@@ -290,7 +353,8 @@ function Dashboard({ darkTheme }) {
       <Box my={5} style={{ minHeight: 520 }}>
         <Box mx={6} py={3} display="flex" justifyContent="center">
           <Typography variant="h5" gutterBottom>
-            <strong>Choose From A Wide Variety of Services Offered by AcharyaBharat</strong>
+            <strong className={classes.bookIcon}>Choose From A Wide Variety of Services Offered by AcharyaBharat</strong>
+            <Divider><MenuBookIcon className={classes.bookIcon} /></Divider>
           </Typography>
         </Box>
         <CourseList />
@@ -341,7 +405,12 @@ function Dashboard({ darkTheme }) {
       <Box mt={3} my={5} display="flex" alignContent="center" justifyContent="center">
         <Card.Group>
           <Card>
-            <Card.Heading>Demo Videos</Card.Heading>
+          <Box mx={6} pt={10} display="flex" justifyContent="center">
+          <Typography variant="h5" gutterBottom>
+            <strong className={classes.bookIcon}>Demo Videos</strong>
+            <Divider><MenuBookIcon className={classes.bookIcon} /></Divider>
+          </Typography>
+        </Box>
             <Card.Entities>
               {slideItems.map((item) => (
                 <Card.Item key={item.media} item={item} itemSelected={itemSelected}>
@@ -408,8 +477,8 @@ function Dashboard({ darkTheme }) {
       </Box>
 
       <Box my={5} display="flex" alignContent="center" justifyContent="center">
-        <Box width="100vh">
-          <Carousel
+        <Box>
+          {/* <Carousel
             animation={"slide"}
             timeout={500}
             indicators={false}
@@ -420,7 +489,71 @@ function Dashboard({ darkTheme }) {
                 <Image src={item.media} aspectRatio={16 / 9} />
               </Paper>
             ))}
-          </Carousel>
+          </Carousel> */}
+          <div className={classes.root}>
+          <Box mx={6} py={3} display="flex" justifyContent="center">
+          <Typography variant="h5" gutterBottom>
+            <strong className={classes.bookIcon}>Frequently Asked Questions</strong>
+            <Divider><MenuBookIcon className={classes.bookIcon}/></Divider>
+          </Typography>
+        </Box>
+      <Accordion className={classes.accordian} expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon className={classes.expand}/>}
+          aria-controls="panel1bh-content"
+          id="panel1bh-header"
+        >
+          <Typography className={classes.heading}>Are the writers professional?</Typography>
+        </AccordionSummary>
+        <AccordionDetails className={classes.accordianSummary}>
+          <Typography>
+          Yes, at Digituala we are a team of highly proficient academic experts working to help and guide you through out in your academic writing. All our writers are professionals working with a vast experience of years in their respective fields and subjects.
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+      <Accordion className={classes.accordian} expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon className={classes.expand}/>}
+          aria-controls="panel2bh-content"
+          id="panel2bh-header"
+        >
+          <Typography className={classes.heading}>How much time do you take to deliver an assignment?</Typography>
+        </AccordionSummary>
+        <AccordionDetails className={classes.accordianSummary}>
+          <Typography>
+          Delivering the required work within the given time frame has been our code of conduct. As soon as we receive your order, our experts undergo a strategy and give you a date of submission from our end. Hence, the time depends on the required work and time frame.
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+      <Accordion className={classes.accordian} expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon className={classes.expand}/>}
+          aria-controls="panel3bh-content"
+          id="panel3bh-header"
+        >
+          <Typography className={classes.heading}>What kind of services do you provide?</Typography>
+        </AccordionSummary>
+        <AccordionDetails className={classes.accordianSummary}>
+          <Typography>
+          We are working as an educational platform easing out for the students by helping them provide quality academic writing help services. We offer writing services like academic content writing, textbook solutions, online tutoring support, localisation, assignment writing, thesis and research paper, educational videos using AR and VR and much more.
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+      <Accordion className={classes.accordian} expanded={expanded === 'panel4'} onChange={handleChange('panel4')}>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon className={classes.expand}/>}
+          aria-controls="panel4bh-content"
+          id="panel4bh-header"
+        >
+          <Typography className={classes.heading}>How long have you been working?</Typography>
+        </AccordionSummary>
+        <AccordionDetails className={classes.accordianSummary}>
+          <Typography>
+          Being an education platform catering all hiring requirements, content development, academic writing help, and outsourcing knowledge we have been serving our clients over 2 years in the marketplace.
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+    </div>
         </Box>
       </Box>
       
@@ -475,7 +608,6 @@ function Dashboard({ darkTheme }) {
           </Box>
         </Box>
       </Box>
-      <FooterContainer />
     </Fragment>
     </>
   );
