@@ -1,12 +1,13 @@
 import React from "react";
 import cx from "clsx";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import BrandCardHeader from "@mui-treasury/components/cardHeader/brand";
 import { useLightTopShadowStyles } from "@mui-treasury/styles/shadow/lightTop";
-import { Box } from "@material-ui/core";
+import { Box, useMediaQuery, Grid } from "@material-ui/core";
 import logo from "../../assets/images/AB.jpeg";
+import ShowcaseCard from "../../components/CourseList/CourseCard/ShowcaseCard";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -37,20 +38,31 @@ const useStyles = makeStyles((theme) => ({
   },
   message:{
     height: "6em",
-  }
+  },
+  position: {
+    marginTop: "5%",
+    [theme.breakpoints.up("md")]: {
+      position: "fixed",
+      marginTop: "8%",
+      marginLeft: "5%",
+    },
+  },
 }));
 
 const ContactUs = React.memo(function ProjectCard() {
   const shadowStyles = useLightTopShadowStyles();
   const cardStyles = useStyles();
+  const theme = useTheme();
+  const matchMD = useMediaQuery(theme.breakpoints.up("md"));
 
   return (
-    <Box
+<Grid className={cardStyles.background} container direction={matchMD ? "row" : "column-reverse"}>
+<Grid item xs={matchMD ? 8 : 12}>
+<Box
       display="flex"
       alignItems="center"
       justifyContent="center"
       minHeight={"92.2vh"}
-      className={cardStyles.background}
     >
       <Box m={3}>
         <Card className={cx(cardStyles.root, shadowStyles.root)}>
@@ -65,6 +77,14 @@ const ContactUs = React.memo(function ProjectCard() {
         </Card>
       </Box>
     </Box>
+</Grid>
+
+<Grid item xs={matchMD ? 4 : 12}>
+  <Box mx={2} className={cardStyles.position}>
+    <ShowcaseCard/>
+  </Box>
+</Grid>
+</Grid>
   );
 });
 
