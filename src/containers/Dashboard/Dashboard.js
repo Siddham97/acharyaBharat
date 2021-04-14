@@ -183,24 +183,6 @@ const slideItems = [
       videolink:"-nmf7ikciN0",
     imagelink:"https://elearning0706.cybersoft.edu.vn/hinhanh/android-java-masterclass-become-an-app-developer.jpg"
   },
-  {
-    media: course5,
-    title: "May the force be with you",
-    subtitle: "The Force",
-    desc:
-      "The Force is a metaphysical and ubiquitous power in the Star Wars fictional universe.",
-      videolink:"tO9nvYzxINM",
-    imagelink:"https://elearning0706.cybersoft.edu.vn/hinhanh/advandge-programming.png"
-  },
-  {
-    media: course6,
-    title: "May the force be with you",
-    subtitle: "The Force",
-    desc:
-      "The Force is a metaphysical and ubiquitous power in the Star Wars fictional universe.",
-      videolink:"tO9nvYzxINM",
-    imagelink:"https://elearning0706.cybersoft.edu.vn/hinhanh/ui-web-design-using-adobe-illustrator-cc.jpg"
-  },
 ];
 
 const tileData = [
