@@ -154,7 +154,7 @@ const slideItems = [
     title: "Bharat Dwivedi",
     subtitle: "The Force is a metaphysical and ubiquitous power in the Star Wars fictional universe.",
     desc: "Digging in the textbooks for hours to match the solution takes half of the time for every student. Verification of the solutions plays an important role to give the last-minute surety and satisfaction. Our education experts, works to provide exactly what the students and our clients look for. Textbook solutions make it convenient and comfortable for both the teachers and the students to verify their understandings, learnings and efforts of the teachings gained.",
-    videolink:"tO9nvYzxINM",
+    videolink:"jrbcEBWRfIE",
     imagelink:"https://elearning0706.cybersoft.edu.vn/hinhanh/dsa.jpg"
   },
   {
