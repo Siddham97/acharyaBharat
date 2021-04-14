@@ -21,10 +21,10 @@ import CourseList from "../../components/CourseList/CourseList";
 
 import heroImage from "../../assets/images/home-hero.jpg";
 
-import course1 from "../../assets/images/episodes/1.png";
-import course2 from "../../assets/images/episodes/2.png";
-import course3 from "../../assets/images/episodes/3.png";
-import course4 from "../../assets/images/episodes/4.png";
+import course1 from "../../assets/images/episodes/1.jpg";
+import course2 from "../../assets/images/episodes/2.jpg";
+import course3 from "../../assets/images/episodes/3.jpg";
+import course4 from "../../assets/images/episodes/4.jpeg";
 import course5 from "../../assets/images/episodes/5.png";
 import course6 from "../../assets/images/episodes/6.png";
 
@@ -151,7 +151,7 @@ const useStyles = makeStyles((theme) => ({
 const slideItems = [
   {
     media: course1,
-    title: "Bharat Dwivedi",
+    title: "Manpower Planning & Sourcing",
     subtitle: "The Force is a metaphysical and ubiquitous power in the Star Wars fictional universe.",
     desc: "Digging in the textbooks for hours to match the solution takes half of the time for every student. Verification of the solutions plays an important role to give the last-minute surety and satisfaction. Our education experts, works to provide exactly what the students and our clients look for. Textbook solutions make it convenient and comfortable for both the teachers and the students to verify their understandings, learnings and efforts of the teachings gained.",
     videolink:"jrbcEBWRfIE",
@@ -159,7 +159,7 @@ const slideItems = [
   },
   {
     media: course2,
-    title: "Siddham Sharma",
+    title: "Btech Related Videos",
     subtitle: "The Force is a metaphysical and ubiquitous power in the Star Wars fictional universe.",
     desc: "Web-based education or online tutoring support has been I trends past few years. Coping up with the modernised techniques and trends, online education has made it convenient and comfortable for the students to understand better and have a transparency of learning and teaching. With technology creating new opportunities for the students for their education, online tutoring has taken over easily.",
     videolink:"MOVZTV8aLwE",
@@ -167,7 +167,7 @@ const slideItems = [
   },
   {
     media: course3,
-    title: "Iti Sharma",
+    title: "Powerpoint Presentation With Audio",
     subtitle: "The Force is a metaphysical and ubiquitous power in the Star Wars fictional universe.",
     desc:
       "Having a team of qualified professionals and academic writing experts, we offer academic content writing services for the students to ease out their workload and focus on their extra-curricular activities. We are one of the leading companies when it comes to helping the students with their assignments work. Our solutions are 100% authentic and plagiarism free which will make your assignments appropriate and will definitely help you in achieving good results.",
@@ -176,7 +176,7 @@ const slideItems = [
   },
   {
     media: course4,
-    title: "Isha Sharma",
+    title: "IIT Related Videos",
     subtitle: "The Force is a metaphysical and ubiquitous power in the Star Wars fictional universe.",
     desc:
       "Gaining only the theoretical knowledge is never enough to understand the basis of every subject. Practical knowledge works as another important part in understanding every subject in detail. To make sure each and every part is conveyed and understood crystal clearly, we offer educational videos conducted by our experts and professionals using AR and VR support for better understanding of the coursework.",

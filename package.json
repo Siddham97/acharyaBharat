@@ -1,8 +1,8 @@
 {
-  "name": "CourseHub",
+  "name": "AcharyaBharat",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://niemtin007.github.io/CourseHub",
+  "homepage": "",
   "dependencies": {
     "@babel/core": "^7.10.2",
     "@date-io/date-fns": "^1.3.13",

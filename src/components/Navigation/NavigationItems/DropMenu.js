@@ -16,7 +16,7 @@ import AvatarItem from "../Avatar/AvatarItem";
 import DarkThemeSwitch from "../../SwitchButton/DarkThemeSwitch";
 
 import FacebookIcon from "@material-ui/icons/Facebook";
-import GitHubIcon from "@material-ui/icons/GitHub";
+import YouTubeIcon from '@material-ui/icons/YouTube';
 import WhatsAppIcon from '@material-ui/icons/WhatsApp';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
@@ -98,11 +98,11 @@ const DropMenu = (props) => {
         <IconButton
           size="small"
           component={Link}
-          href="https://github.com/"
+          href="https://youtube.com/"
           target="_blank"
           rel="noopener"
         >
-          <GitHubIcon style={{ fontSize: "1.125rem", color:"white"}} />
+          <YouTubeIcon style={{ fontSize: "2.125rem", color:"white"}} />
         </IconButton>
       </Box>
       </ButtonGroup>

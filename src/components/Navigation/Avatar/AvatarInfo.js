@@ -8,7 +8,7 @@ import Avatar from "@material-ui/core/Avatar";
 import Divider from "@material-ui/core/Divider";
 import { IconButton, Typography, Link, Badge } from "@material-ui/core";
 import FacebookIcon from "@material-ui/icons/Facebook";
-import GitHubIcon from "@material-ui/icons/GitHub";
+import YouTubeIcon from '@material-ui/icons/YouTube';
 
 const useStyles = makeStyles(({ palette }) => ({
   card: {
@@ -89,16 +89,16 @@ export const AvatarInfo = React.memo(function ProfileCard() {
           target="_blank"
           rel="noopener"
         >
-          <FacebookIcon />
+          <FacebookIcon style={{ fontSize: "2.125rem", color:"grey" }}/>
         </IconButton>
         <IconButton
           size="small"
           component={Link}
-          href="https://github.com/"
-          target="_blank"
+          href="https://youtube.com/"
+          target="_blank" 
           rel="noopener"
         >
-          <GitHubIcon style={{ fontSize: "1.125rem" }} />
+          <YouTubeIcon style={{ fontSize: "2.125rem", color:"grey" }} />
         </IconButton>
       </Box>
       <Typography className={styles.subheader}>

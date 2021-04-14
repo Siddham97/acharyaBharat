@@ -6,7 +6,7 @@ import CardContent from "@material-ui/core/CardContent";
 import BrandCardHeader from "@mui-treasury/components/cardHeader/brand";
 import { useLightTopShadowStyles } from "@mui-treasury/styles/shadow/lightTop";
 import { Box, useMediaQuery, Grid } from "@material-ui/core";
-import logo from "../../assets/images/AB.jpeg";
+import logo from "../../assets/images/AB.jpg";
 import ShowcaseCard from "../../components/CourseList/CourseCard/ShowcaseCard";
 
 const useStyles = makeStyles((theme) => ({

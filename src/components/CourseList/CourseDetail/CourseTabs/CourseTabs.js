@@ -10,7 +10,7 @@ import { useLightTopShadowStyles } from "@mui-treasury/styles/shadow/lightTop";
 import { Box, Avatar, Chip } from "@material-ui/core";
 
 import DoneIcon from "@material-ui/icons/Done";
-import logo from "../../../../assets/images/AB.jpeg";
+import logo from "../../../../assets/images/AB.jpg";
 import CourseDesc from "../../../../store/fixtures/courseDesc.json";
 import {
   Grid,
