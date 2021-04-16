@@ -79,7 +79,7 @@ const About = React.memo(function ProjectCard() {
             />
             <TextInfoContent
               classes={styles}
-              heading={"Our Vission"}
+              heading={"Our Vision"}
               body={
                 `We would like to see a country where value is given exactly where it should be. We completely understand the level of competitiveness, and social pressures that students have to face in the society today. However, in future, we would like to see a country where things have truly changed for the better. Where there is freedom of choice for an individual, and opportunities available to pursue them as such. This is the central vision of everything we have to offer, and see how effective we can be through hard work, perseverance and dedication.`
               }

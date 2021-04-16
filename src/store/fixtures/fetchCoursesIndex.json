@@ -1,7 +1,4 @@
 [
-    {"identifier":"ES","maDanhMuc":"BackEnd","tenDanhMuc":"Education Services"},
-    {"identifier":"R","maDanhMuc":"Design","tenDanhMuc":"Resources"},
-    {"identifier":"C","maDanhMuc":"DiDong","tenDanhMuc":"Careers"},
-    {"identifier":"SN","maDanhMuc":"FrontEnd","tenDanhMuc":"Something New"}
+    {"identifier":"ES","maDanhMuc":"BackEnd","tenDanhMuc":"Education Services"}
 ]
     

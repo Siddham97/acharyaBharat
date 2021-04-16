@@ -90,19 +90,19 @@ const ShowcaseCard = (props) => {
   const infoList = [
     {
       icon: <LocationOnIcon fontSize="small" />,
-      text: "4578 Marmora Road, Glasgow D04 89GR",
+      text: "Q-254, sharda Nagar Kanpur UP 208025",
     },
     {
       icon: <MailIcon fontSize="small" />,
-      text: "info@demolink.org",
+      text: "hr@acharyabharat.com",
     },
     {
       icon: <PhoneIphoneIcon fontSize="small" />,
-      text: "+91 9312601398",
+      text: "+919643276621",
     },
     {
       icon: <PhoneIphoneIcon fontSize="small" />,
-      text: "+91 8562601398",
+      text: "01204288597",
     },
   ];
 

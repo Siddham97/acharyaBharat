@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 
-import { Menu, Box, useMediaQuery } from "@material-ui/core";
+import { Menu, Box, useMediaQuery, Typography } from "@material-ui/core";
 import { Button, ButtonGroup, IconButton } from "@material-ui/core";
 
 import VpnKeyIcon from "@material-ui/icons/VpnKey";
@@ -63,7 +63,7 @@ const DropMenu = (props) => {
       m={matchMD ? 0 : 1}
       minWidth={matchMD ? 0 : 180}
     >
-      <ButtonGroup disableElevation variant="contained" size="small">
+      {/* <ButtonGroup disableElevation variant="contained" size="small">
         <Box display="flex" justifyContent="center">
         <IconButton
           size="small"
@@ -105,7 +105,12 @@ const DropMenu = (props) => {
           <YouTubeIcon style={{ fontSize: "2.125rem", color:"white"}} />
         </IconButton>
       </Box>
-      </ButtonGroup>
+      </ButtonGroup> */}
+      <Box>
+        <Box ml={2}>
+          <Typography variant="subtitle1">hr@acharyabharat.com | +919643276621</Typography>
+        </Box>
+      </Box>
     </Box>
   );
 

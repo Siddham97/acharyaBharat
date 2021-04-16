@@ -20,7 +20,7 @@ export default function Overview() {
           Description
         </Typography>
         <Typography variant="subtitle1" gutterBottom>
-        ACADMASTERS offers top quality Educational Content Development services 
+        AcharyaBharat offers top quality Educational Content Development services 
         for CBSE, State Boards as well as ICSE/ISC board course curriculum. We 
         also offer educational content for JEE Mains, JEE Advanced,and other 
         competitive entrance examinations held in India as well as other countries.

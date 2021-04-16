@@ -40,6 +40,11 @@ import Card from "../../components/card";
 import tutor from "../../assets/images/tutor.jpg";
 import video from "../../assets/videos/video.mp4";
 
+import mps from "../../assets/images/episodes/MPS.jpg";
+import btech from "../../assets/images/episodes/btech.jpg";
+import ppt from "../../assets/images/episodes/ppt.png";
+import iit from "../../assets/images/episodes/iit.jpg";
+
 import Accordion from '@material-ui/core/Accordion';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
@@ -152,36 +157,36 @@ const slideItems = [
   {
     media: course1,
     title: "Manpower Planning & Sourcing",
-    subtitle: "The Force is a metaphysical and ubiquitous power in the Star Wars fictional universe.",
+    subtitle: "Digging in the textbooks for hours to match the solution takes half of the time for every student.",
     desc: "Digging in the textbooks for hours to match the solution takes half of the time for every student. Verification of the solutions plays an important role to give the last-minute surety and satisfaction. Our education experts, works to provide exactly what the students and our clients look for. Textbook solutions make it convenient and comfortable for both the teachers and the students to verify their understandings, learnings and efforts of the teachings gained.",
     videolink:"jrbcEBWRfIE",
-    imagelink:"https://elearning0706.cybersoft.edu.vn/hinhanh/dsa.jpg"
+    imagelink: mps
   },
   {
     media: course2,
     title: "Btech Related Videos",
-    subtitle: "The Force is a metaphysical and ubiquitous power in the Star Wars fictional universe.",
+    subtitle: "Web-based education or online tutoring support has been I trends past few years.",
     desc: "Web-based education or online tutoring support has been I trends past few years. Coping up with the modernised techniques and trends, online education has made it convenient and comfortable for the students to understand better and have a transparency of learning and teaching. With technology creating new opportunities for the students for their education, online tutoring has taken over easily.",
-    videolink:"MOVZTV8aLwE",
-    imagelink:"https://elearning0706.cybersoft.edu.vn/hinhanh/advanced-react-and-redux-2018-edition.png"
+    videolink:"jrbcEBWRfIE",
+    imagelink: btech
   },
   {
     media: course3,
     title: "Powerpoint Presentation With Audio",
-    subtitle: "The Force is a metaphysical and ubiquitous power in the Star Wars fictional universe.",
+    subtitle: "Having a team of qualified professionals and academic writing experts, we offer academic content writing services for the students.",
     desc:
       "Having a team of qualified professionals and academic writing experts, we offer academic content writing services for the students to ease out their workload and focus on their extra-curricular activities. We are one of the leading companies when it comes to helping the students with their assignments work. Our solutions are 100% authentic and plagiarism free which will make your assignments appropriate and will definitely help you in achieving good results.",
-      videolink:"MOVZTV8aLwE",
-    imagelink:"https://elearning0706.cybersoft.edu.vn/hinhanh/the-complete-android-oreo-developer-course-build-23-apps-.jpg"
+      videolink:"jrbcEBWRfIE",
+    imagelink: ppt
   },
   {
     media: course4,
     title: "IIT Related Videos",
-    subtitle: "The Force is a metaphysical and ubiquitous power in the Star Wars fictional universe.",
+    subtitle: "Gaining only the theoretical knowledge is never enough to understand the basis of every subject.",
     desc:
       "Gaining only the theoretical knowledge is never enough to understand the basis of every subject. Practical knowledge works as another important part in understanding every subject in detail. To make sure each and every part is conveyed and understood crystal clearly, we offer educational videos conducted by our experts and professionals using AR and VR support for better understanding of the coursework.",
-      videolink:"-nmf7ikciN0",
-    imagelink:"https://elearning0706.cybersoft.edu.vn/hinhanh/android-java-masterclass-become-an-app-developer.jpg"
+      videolink:"jrbcEBWRfIE",
+    imagelink: iit
   },
 ];
 
@@ -489,7 +494,7 @@ function Dashboard({ darkTheme }) {
         </AccordionSummary>
         <AccordionDetails className={classes.accordianSummary}>
           <Typography>
-          Yes, at Digituala we are a team of highly proficient academic experts working to help and guide you through out in your academic writing. All our writers are professionals working with a vast experience of years in their respective fields and subjects.
+          Yes, at AcharyaBharat we are a team of highly proficient academic experts working to help and guide you through out in your academic writing. All our writers are professionals working with a vast experience of years in their respective fields and subjects.
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -547,44 +552,42 @@ function Dashboard({ darkTheme }) {
           justifyContent="center"
           minHeight="50vh"
         >
-          <Box mx={5} mt={5} minWidth={315} alignSelf="center">
+          <Box mx={5} mt={9} minWidth={315} alignSelf="center">
             <Box>
               <Typography variant="h4" color="inherit">
-                  India Office
+                  Noida Office
               </Typography>
             </Box>
             <Box mt={3} display="flex">
             <LocationOnIcon style={{color:"white"}}/>
               <Typography>
-                308,third floor, Shree Amar Heights,Ajmer Rd, 
-                opposite Asopa Hospital, Nirman Nagar, DCM, Jaipur, 
-                Rajasthan 302019
+              Block D sector 105 Noida
               </Typography>
             </Box>
           </Box>
-          <Box mx={5} mt={5} minWidth={315} alignSelf="center">
+          <Box mx={5} mt={9} minWidth={315} alignSelf="center">
             <Box>
               <Typography variant="h4" color="inherit">
-                  USA Office
+                  Kanpur Office
               </Typography>
             </Box>
             <Box mt={3} display="flex">
             <LocationOnIcon style={{color:"white"}}/>
               <Typography>
-                  16193, Coastal Highway Lewes, Delaware, 19958, USA
+              Q-254, sharda Nagar Kanpur UP 208025
               </Typography>
             </Box>
           </Box>
-          <Box mx={5} mt={5} minWidth={315} alignSelf="center">
+          <Box mx={5} mt={9} minWidth={315} alignSelf="center">
             <Box>
               <Typography variant="h4" color="inherit">
-              Australia Office
+              Farrukhabad Office
               </Typography>
             </Box>
             <Box mt={3} display="flex">
             <LocationOnIcon style={{color:"white"}}/>
               <Typography>
-              Australia-Level 2, 230-240 Commonwealth Street, Surry Hills, NSW 2010
+              6/415 Fatehgarh Farrukhabad UP 209625
               </Typography>
             </Box>
           </Box>
