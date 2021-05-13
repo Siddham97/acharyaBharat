@@ -2,6 +2,8 @@ import React, {useState,useContext, createContext} from 'react';
 import ReactDOM from 'react-dom';
 import {Container, Button, Overlay, Inner, Close} from './styles/player';
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
+import { useMediaQuery } from "@material-ui/core";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
 
 export const PlayerContext = createContext();
 
@@ -17,13 +19,15 @@ export default function Player({children, ...restProps}){
 
 Player.Video = function PlayerVideo({src, ...restProps}){
     const {showPlayer, setShowPlayer} = useContext(PlayerContext);
+    const theme = useTheme();
+    const matchMD = useMediaQuery(theme.breakpoints.up("md"));
 
     return showPlayer ? ReactDOM.createPortal(
         <Overlay onClick={() => setShowPlayer(false)}>
             <Inner>
             <iframe src={`https://www.youtube.com/embed/${src}`}
-            width="953"
-            height="580"
+            width={matchMD ? '850' : '450'}
+            height={matchMD ? '580' : '350'}
         frameBorder='0'
         allow='autoplay; encrypted-media'
         allowFullScreen

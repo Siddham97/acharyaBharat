@@ -71,7 +71,6 @@ export const Text = styled.p`
 
 export const Entities = styled.div`
   display: flex;
-  flex-direction: row;
 `;
 
 export const Meta = styled.div`
@@ -116,7 +115,7 @@ export const Item = styled.div`
     margin-left: 56px;
 
     @media (max-width: 1000px) {
-      margin-left: 30px;
+      margin-left: 0px;
     }
   }
 

@@ -12,7 +12,11 @@ export const Overlay = styled.div`
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.75);
-  margin: 0 20px;
+  margin: 40px 30px;
+
+  @media (max-width: 800px) {
+    margin: 0;
+  }
 `;
 
 export const Inner = styled.div`
@@ -24,6 +28,12 @@ export const Inner = styled.div`
   video {
     height: 100%;
     width: 100%;
+  }
+
+  @media (max-width: 800px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 `;
 

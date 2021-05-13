@@ -121,13 +121,14 @@ const useStyles = makeStyles((theme) => ({
     color:"white",
     fontSize: theme.typography.pxToRem(15),
     flexShrink: 0,
+    inlineSize :'fit-content',
   },
   secondaryHeading: {
     fontSize: theme.typography.pxToRem(15),
     color: theme.palette.text.secondary,
   },
   accordian:{
-    zIndex: theme.zIndex.drawer + 1,
+    // zIndex: theme.zIndex.drawer + 1,
     background: "linear-gradient(120deg, #2980b9, #8e44ad)",
     marginBottom:"15px"
   },
@@ -150,7 +151,27 @@ const useStyles = makeStyles((theme) => ({
   },
   bookIcon: {
     color:"#4c5593"
-  }
+  },
+  cardSm : {
+    flexDirection: 'row',
+    "@media (max-width: 600px)": {
+      flexDirection: 'column',
+    },
+  },
+  contentHiddenSM : {
+    "@media (max-width: 800px)": {
+      display: 'none',
+    }
+  },
+  addressBox :{
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
+    minHeight: "50vh",
+    "@media (max-width: 1030px)": {
+      flexDirection: "column",
+    }
+  },
 }));
 
 const slideItems = [
@@ -373,7 +394,7 @@ function Dashboard({ darkTheme }) {
               </Typography>
             </Box>
 
-            <Box mt={3}>
+            <Box mt={3} className={classes.contentHiddenSM}>
               <Typography>
               Our main focus is to act like a bridge between our client and the 
               aspiring candidate. We don’t charge any cut or commission for 
@@ -398,7 +419,7 @@ function Dashboard({ darkTheme }) {
             <Divider><MenuBookIcon className={classes.bookIcon} /></Divider>
           </Typography>
         </Box>
-            <Card.Entities>
+            <Card.Entities className={classes.cardSm}>
               {slideItems.map((item) => (
                 <Card.Item key={item.media} item={item} itemSelected={itemSelected}>
                   <Card.Image src={item.media} />
@@ -409,7 +430,7 @@ function Dashboard({ darkTheme }) {
                 </Card.Item>
               ))}
             </Card.Entities>
-            <Card.Feature src={imageSource}>
+            <Card.Feature src={matchLG ? imageSource : ''}>
               <Player>
                 <Player.Button />
                 <Player.Video src={videoSource} />
@@ -444,7 +465,7 @@ function Dashboard({ darkTheme }) {
               </Typography>
             </Box>
 
-            <Box mt={3}>
+            <Box mt={3} className={classes.contentHiddenSM}>
               <Typography>
               We as a large pool of professionals are here to assist you with the best 
               academic content writing and onlineservices. Excellent academic writing help 
@@ -546,12 +567,7 @@ function Dashboard({ darkTheme }) {
       
       <Box className={classes.intro}>
         {topSwoop}
-        <Box
-          display="flex"
-          flexDirection="row"
-          justifyContent="center"
-          minHeight="50vh"
-        >
+        <Box className={classes.addressBox}>
           <Box mx={5} mt={9} minWidth={315} alignSelf="center">
             <Box>
               <Typography variant="h4" color="inherit">
